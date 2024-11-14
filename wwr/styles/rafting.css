@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #f09140;
+    --secondary-color: #001427;
+    --accent1-color: #708d81;
+    --accent2-color: #eaffda;
+}
+
+*{
+    width: 10rem
+}
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--accent2-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald", sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--accent2-color);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.hero h1 {
+    position: absolute;
+}
+
+.hero article {
+    position: absolute;
+}
+.hero article img {
+    float: right;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
