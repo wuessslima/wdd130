@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname">
+                <label for="useremail">User E-mail</label>
+                <input type="email" id="useremail" name="useremail">
+            </fieldset>
+            <fieldset>
+                <legend>Questions</legend>
+                <label for="browser">What is your favorite browser?</label>
+                <select name="browser" id="browser">
+                    <option value="chrome">Chrome</option>
+                    <option value="opera">Opera</option>
+                    <option value="mozilla">Mozilla</option>
+                </select><br>
+                <label for="pet">Do you have a household pet?</label>
+                <input type="checkbox" name="pet" id="pet"><br>
+                <label for="feedback">List the places you have lived</label>
+                <textarea name="feedback" id="feedback" placeholder="Text here..." rows="4"></textarea>
+            </fieldset>
+            <button type="submit">Submit Poll</button>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
