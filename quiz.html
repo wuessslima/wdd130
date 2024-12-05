@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/quiz.css">
+</head>
+<body>
+    <form>
+        <h1>✔️Basic HTML and CSS Quiz</h1>
+        <fieldset>
+            <label for="q1"><span>1.</span> What does the acronym CSS stand for?</label><br>
+            <div id="container-text">
+                <input type="text" name="q1" id="q1"><br>
+            </div>
+            <label for="q2"><span>2.</span> How are id and class attributes selected in CSS?</label><br>
+            <div id="container-textarea">
+                <textarea name="q2" id="q2" rows="4"></textarea><br>
+            </div>
+            <label for="q3"><span>3.</span> Which of the following is a valid CSS comment?</label><br>
+            <div id="container-select">
+                <select name="q3" id="q3">
+                    <option value="" selected disabled>Choose One...</option>
+                    <option value="html-comment">&lt;!- --!></option>
+                    <option value="python-comment">#</option>
+                    <option value="css-comment">/* */</option>
+                </select><br>
+            </div>
+            <label for="q4"><span>4.</span> What is the bottom margin given this declaration?</label><br>
+            <div id="container-img">
+                <img src="/images/css-example-quiz.png" alt="margin" height="30px" width="200x"><br>
+            </div>
+            <div id="container-text">
+                <input type="number" name="q4" id="q4"><br>
+            </div>
+            <div id="container-button">
+                <button type="submit">Submit Quiz</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
