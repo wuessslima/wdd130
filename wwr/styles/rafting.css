@@ -16,13 +16,14 @@ body {
     color: var(--text-color);
 }
 
+/* Header */
 header {
     padding: 15px;
 }
 
 header .logo {
-    height: 80px;
-    margin-right: 60px;
+    height: 60px; /* Ajuste do tamanho do logotipo */
+    object-fit: contain;
 }
 
 header nav a {
@@ -30,46 +31,54 @@ header nav a {
     text-decoration: none;
     margin: 0 10px;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
+header nav a:hover {
+    color: var(--primary-color); /* Efeito de hover nos links */
+}
+
+/* Hero Section */
 .hero {
     background-image: url('/wwr/images/hero-image-min.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    text-align: center;
+    position: relative;
     color: var(--text-color);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    z-index: 1;
 }
 
 .hero h1 {
-    top: 20px;
-    left: 20px;
     font-family: 'Oswald', sans-serif;
     font-size: 3em;
+    margin: 0;
+    z-index: 2;
 }
 
-.hero article {
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    height: auto;
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    z-index: 2;
 }
 
-.hero article img {
-    float: left; 
-    margin-left: 10px;
-    width: 100px;
-    border-radius: 50%;
-}
-
+/* Section */
 section {
     margin: 20px;
 }
@@ -80,56 +89,529 @@ section img {
     margin: 10px 0;
 }
 
+/* Footer */
+footer {
+    background-color: #001427;
+    color: #eaffda;
+    text-align: center;
+    padding: 20px 10px;
+    border-top: 3px solid #f09140;
+    font-family: 'Arial', sans-serif;
+}
+
+footer p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
 footer .social-media a img {
-    width: 30px;
-    margin: 0 5px;
-    float: right;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 footer .social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
 }
 
+/* Container Grid Header */
 .container-grid-header {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #001427;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .container-flex-nav {
     display: flex;
+    gap: 20px;
 }
 
+header .container-flex-nav a {
+    color: #eaffda;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'Oswald', sans-serif;
+    transition: color 0.3s ease;
+}
+
+/* Grid Sections */
 .container-grid-section-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    column-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #eaffda;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .container-grid-h2 {
-    grid-column: 1/4;
+    grid-column: 1 / -1;
     text-align: center;
+    color: #001427;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.container-grid-section-1 div {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.container-grid-section-1 div img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.container-grid-section-1 div p {
+    font-size: 1em;
+    color: #708d81;
+    margin: 0;
+    font-weight: 500;
 }
 
 .container-grid-p {
     text-align: center;
 }
 
-.container-grid-section-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+/* Container Form */
+.styled-form {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.styled-form label {
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 5px;
+}
+
+.styled-form input {
+    padding: 8px 10px;
+    border: 1px solid #708d81;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #001427;
+    width: calc(100% - 20px);
+    max-width: 200px;
+}
+
+.styled-form button {
+    background-color: #f09140;
+    color: #001427;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-form button:hover {
+    background-color: #eaffda;
+    transform: scale(1.05);
+}
+
+.cta {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 20px; /* Espaçamento entre os itens */
+    background-color: var(--accent1-color); /* Cor de fundo para destacar a seção */
+    padding: 40px; /* Mais padding para destacar a seção */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 40px 0; /* Espaçamento externo */
+}
+
+.cta h2 {
+    font-size: 2.5em;
+    margin: 0;
+    color: var(--primary-color); /* Cor do título */
+    font-family: 'Oswald', sans-serif; /* Fonte do título */
+    text-transform: uppercase; /* Título em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+.cta p {
+    font-size: 1.2em;
+    color: var(--text-color); /* Cor do texto */
+    font-weight: 400; /* Peso do texto */
+    margin: 0;
+}
+
+.cta .btn-cta {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: var(--text-color); /* Cor do texto */
+    background-color: var(--primary-color); /* Cor de fundo do botão */
+    padding: 15px 30px;
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600; /* Peso do texto do botão */
+}
+
+.cta .btn-cta:hover {
+    background-color: var(--accent2-color); /* Cor do botão no hover */
+    color: var(--secondary-color); /* Cor do texto no hover */
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.newsletter {
+    background-color: #001427; /* Cor secundária */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    color: #eaffda; /* Texto em accent2 */
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.newsletter h2 {
+    text-align: center; /* Centraliza o título */
+    font-size: 2em; /* Tamanho do título */
+    color: #f09140; /* Cor primária */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.styled-form {
+    display: flex;
+    flex-direction: column; /* Organiza os campos em uma coluna */
+    gap: 15px;
+    align-items: center;
+}
+
+.styled-form label {
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+}
+
+.styled-form input {
+    padding: 8px 10px;
+    border: 1px solid #708d81; /* Accent1 */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #001427; /* Texto interno */
+    width: calc(100% - 20px);
+    max-width: 400px;
+}
+
+.styled-form button {
+    background-color: #f09140; /* Cor primária */
+    color: #001427; /* Contraste no botão */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-form button:hover {
+    background-color: #eaffda; /* Accent2 no hover */
+    transform: scale(1.05);
+}
+
+.container-grid-section-1-about {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna para todos os elementos */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px;
+    background-color: #eaffda; /* Cor accent2 para contraste */
+    border-radius: 10px; /* Bordas arredondadas para suavizar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.container-grid-h2-about {
+    text-align: center;
+    color: #001427; /* Cor secundária */
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-grid-p-about {
+    font-size: 1.2em;
+    color: #708d81; /* Cor accent1 */
+    line-height: 1.6;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.container-grid-img-about {
+    width: 100%;
+    max-width: 600px; /* Tamanho máximo da imagem */
+    height: auto;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.container-grid-p-about + .container-grid-img-about {
+    margin-top: 20px; /* Espaço adicional entre o parágrafo e a imagem */
+}
+
+.container-grid-section-2 {
+    padding: 20px;
+    background-color: #f4f4f4; /* Cor clara para contraste com o fundo */
 }
 
 .container-grid-h2-in-section-2 {
-    grid-column: 1/6;
+    text-align: center;
+    font-size: 2em;
+    color: #001427; /* Cor secundária */
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas para as imagens */
+    gap: 15px; /* Espaçamento entre as imagens */
+    justify-items: center; /* Centraliza os itens dentro das células */
+}
+
+.grid-gallery figure {
+    background-color: #ffffff; /* Fundo branco para as imagens */
+    border-radius: 8px; /* Bordas arredondadas para as imagens */
+    overflow: hidden; /* Garante que as bordas arredondadas não sejam violadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Efeito de zoom ao passar o mouse */
+}
+
+.grid-gallery figure:hover {
+    transform: scale(1.05); /* Efeito de zoom nas imagens ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Efeito de sombra mais intensa no hover */
+}
+
+.grid-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
+}
+
+.grid-gallery figcaption {
+    text-align: center;
+    font-size: 1em;
+    color: #708d81; /* Cor accent1 */
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.trips {
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Cor de fundo clara para a seção */
     text-align: center;
 }
 
-figcaption {
+.trips h2 {
+    font-size: 2.5em;
+    color: #001427; /* Cor secundária */
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-grid-trips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas para os artigos */
+    gap: 20px; /* Espaçamento entre os artigos */
+    justify-items: center; /* Centraliza os itens dentro das células */
+}
+
+.container-grid-trips article {
+    background-color: #ffffff; /* Fundo branco para os cards */
+    border-radius: 8px; /* Bordas arredondadas para os cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de hover */
+}
+
+.container-grid-trips article:hover {
+    transform: scale(1.05); /* Efeito de zoom nas imagens ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+.container-grid-trips img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas para as imagens */
+    margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
+}
+
+.container-grid-trips h3 {
+    font-size: 1.6em;
+    color: #001427; /* Cor secundária */
+    margin: 10px 0;
+}
+
+.container-grid-trips p {
+    font-size: 1.1em;
+    color: #708d81; /* Cor accent1 */
+    font-weight: 400;
+    margin: 0;
+}
+
+.trips-table {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fundo branco para contraste */
     text-align: center;
+}
+
+.trips-table h2 {
+    font-size: 2.5em;
+    color: #001427; /* Cor secundária */
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina o espaçamento entre as células */
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    border: 1px solid #e0e0e0; /* Cor suave para as bordas da tabela */
+}
+
+table th {
+    background-color: #001427; /* Cor secundária para o cabeçalho */
+    color: #ffffff; /* Cor branca para o texto do cabeçalho */
+    font-size: 1.3em;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor alternada para as linhas */
+}
+
+table tr:hover {
+    background-color: #f09140; /* Cor primária no hover */
+    color: #ffffff; /* Texto branco no hover */
+    cursor: pointer;
+}
+
+table td {
+    color: #001427; /* Cor secundária para o texto das células */
+}
+
+table td:last-child {
+    color: #f09140; /* Cor primária para os preços */
+    font-weight: bold; /* Destaca os preços */
+}
+
+.container-contact {
+    padding: 40px 20px;
+    background-color: #eaffda; /* Cor accent2 para fundo suave */
+    text-align: center;
+}
+
+.container-contact h1 {
+    font-size: 2.5em;
+    color: #001427; /* Cor secundária */
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-contact figure {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.container-contact figure img {
+    width: 80px; /* Tamanho dos ícones */
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.container-contact figure figcaption {
+    font-size: 1.2em;
+    color: #001427; /* Cor secundária */
+    font-weight: bold;
+}
+
+.container-map {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-map iframe {
+    border: 0;
+    width: 100%;
+    max-width: 800px; /* Largura máxima do mapa */
+    height: 450px;
+    border-radius: 10px; /* Bordas arredondadas para suavizar a aparência */
+}
+
+.container-employee {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    padding: 40px 20px;
+    background-color: #f1f1f1; /* Cor de fundo suave */
+}
+
+.container-employee figure {
+    text-align: center;
+    margin: 20px;
+    flex-basis: 30%; /* Controla o tamanho base de cada figura */
+}
+
+.container-employee figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas nas imagens */
+    max-width: 300px; /* Tamanho máximo da imagem */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar as imagens */
+}
+
+.container-employee figure figcaption {
+    font-size: 1.1em;
+    color: #001427; /* Cor secundária */
+    font-weight: bold;
+    margin-top: 10px;
 }

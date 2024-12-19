@@ -10,34 +10,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/rafting.css">
-    
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header class="container-grid-header">
         <img src="images/logo16_200.png" alt="rafting logo" class="logo">
         <nav class="container-flex-nav">
             <a href="index.html">Home Page</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html" class="active-link">About Us</a>
             <a href="trips.html">Trips</a>
             <a href="contact.html">Contact Us</a>
         </nav>
     </header>
-    <main>
-        <div class="hero">
-            <h1>Lima's Rafting Club</h1>
-            <article>
-                <img src="images/happy-client.jpg" alt="happy clients">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni ipsum ea asperiores deleniti blanditiis amet at expedita veritatis totam nisi!</p>
-            </article>
-        </div>
-        <section class="container-grid-section-1">
-            <h2 class="container-grid-h2">History</h2>
-            <p class="container-grid-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas at recusandae ducimus debitis pariatur laborum quaerat enim maiores veniam tenetur assumenda expedita quisquam, mollitia illo rem. Ea possimus blanditiis nemo?</p>
-            <img src="./images/rafting42_600.jpg" alt="rafting image" class="container-grid-img">
-            <p class="container-grid-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum exercitationem excepturi amet beatae enim obcaecati fuga? Modi cum iusto tenetur repellat fugiat consequuntur enim voluptatem ipsa fugit tempore. Provident, nam?</p>
-        </section>
-        <section class="container-grid-section-2">
-            <h2 class="container-grid-h2-in-section-2">Adventure Awaits You!</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>About Us</h1>
+        <article id="article-home-text">
+            <p>Discover the history, passion, and adventures that define Lima's Rafting Club.</p>
+        </article>
+    </section>
+    <!-- Seção "History" -->
+    <section class="container-grid-section-1-about">
+        <h2 class="container-grid-h2-about">History</h2>
+        <p class="container-grid-p-about">
+            Since its founding, Lima's Rafting Club has been dedicated to creating unforgettable adventures on the river.
+            Our story began with a love for nature, adrenaline, and the joy of bringing people together.
+        </p>
+        <img src="./images/rafting42_600.jpg" alt="rafting image" class="container-grid-img-about">
+        <p class="container-grid-p-about">
+            Join us as we continue to build our legacy, one rafting trip at a time. Experience the thrill, the camaraderie, and the natural beauty that inspire us daily.
+        </p>
+    </section>
+    <!-- Seção "Gallery" -->
+    <section class="container-grid-section-2">
+        <h2 class="container-grid-h2-in-section-2">Adventure Awaits You!</h2>
+        <div class="grid-gallery">
             <figure>
                 <img src="images/rafting1.jpg" alt="rafting example">
                 <figcaption>Rapid Rush Trail</figcaption>
@@ -58,10 +65,11 @@
                 <img src="images/rafting5.jpg" alt="rafting example">
                 <figcaption>Churning Rapids Adventure</figcaption>
             </figure>
-        </section>
-    </main>
+        </div>
+    </section>
+    <!-- Rodapé -->
     <footer>
-        <p></p>
+        <p>&copy; 2024 Lima's Rafting Club. All rights reserved.</p>
         <div class="social-media">
             <a href="https://facebook.com"><img src="images/facebook.png" alt="facebook logo"></a>
             <a href="https://x.com"><img src="images/midia-social.jpg" alt="x logo"></a>
